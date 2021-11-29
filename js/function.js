@@ -12,9 +12,7 @@ function sayHello(name) {
     return "Hello, " + name + "!";
 }
 
-console.log(
-    sayHello("Christian")
-)
+console.log(sayHello("Christian"))
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
