@@ -32,3 +32,20 @@ let age = christian[1]
 console.log(age)
 let innerArr = christian[5]
 console.log(innerArr[1])
+
+function nameOfFunciton(num1, num2,) {
+    return num1 + num2;
+}
+
+console.log(nameOfFunciton(4, 5))
+
+//METHODS
+//basically pre-existing functions
+// Math.random(); // random number between 0 and 1
+// console.log();
+// parseInt();
+
+let ages = [14, 23, 89, 25, 36, 5];
+for(let i = 0; i <= ages.length - 1; i++) {
+    console.log(ages[i] * 2);
+}
