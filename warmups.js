@@ -164,5 +164,62 @@ letterGrade(10)
 //     case "snowy":
 //         console.log("beanie");
 // }
+var scores = [243, 300, 146, 289]
+let avg = arr => arr.reduce((a, b) => a + b, 0) / arr.length;
 
+function bowlerAvg(score) {
+    return avg(score)
+}
 
+console.log(bowlerAvg(scores))
+
+function divThreeFive(topScore) {
+    if (topScore === 300 && topScore % 3 == 0 || topScore % 5 == 0) {
+        return true
+    }
+}
+
+console.log(divThreeFive(300))
+
+let bowlingName = "ThEbEsTbOwLiNgPlAcEever"
+
+function toLower(str) {
+    return bowlingName.toLowerCase().split("").join(" ")
+}
+
+console.log(toLower(bowlingName))
+
+let score = 109
+let name = "bowling is Fun"
+let isBowlingFun = true
+let players = ["tom", "jerry", "Garfield"]
+
+function type(input) {
+    return typeof input;
+}
+
+console.log(type(score))
+console.log(type(name))
+console.log(type(isBowlingFun))
+console.log(type(players))
+
+function allTheAbove(a, b, c, d) {
+    return a, b, c, d
+}
+
+console.log(allTheAbove(bowlerAvg(scores), divThreeFive(300), toLower(bowlingName), type(score)))
+
+function myFunction(firstName, lastName) {
+    return firstName + " " + lastName;
+}
+
+function thatsNotMyName(name) {
+    if (name === "Laura") {
+        return "That's me! I'm " + name + "!";
+    } else {
+        return "That's not me!"
+    }
+}
+
+console.log(myFunction("Christian", "Vazquez"))
+console.log(thatsNotMyName("Christian"))

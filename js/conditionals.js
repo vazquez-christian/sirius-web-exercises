@@ -142,3 +142,16 @@ console.log(calculateTotal(3, 123.45))
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+// let x = confirm("Would you like to enter a number?");
+// if(x === true) {
+//     let number = parseInt(prompt("Please enter a number."));
+//     if(isNaN(number)) {
+//         alert(number + " is not a number!");
+//     } else {
+//         if (number %2 === 0) {
+//             alert(number + " is an even number")
+//         } else {
+//             alert(number + " is not an even number.")
+//         }
+//     }
+// }
