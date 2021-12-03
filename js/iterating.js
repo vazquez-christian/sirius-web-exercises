@@ -31,8 +31,8 @@
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
-    names.forEach(function (names) {
-        console.log(names);
+    names.forEach(function (element) {
+        console.log(element);
     });
     /**
      * TODO:
