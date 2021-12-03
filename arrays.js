@@ -17,5 +17,18 @@ console.log(favFoods[1])
 favFoods[2] += " 3"
 console.log(favFoods[2])
 
-console.log(students.indexOf("Mina"))
+let indexOfMina = students.indexOf("Mina")
+let otherIndexOfMina = students.lastIndexOf("Mina")
+console.log(otherIndexOfMina)
+console.log(indexOfMina)
 
+//METHODS
+//ACCESSING ELEMENTS FROM AN ARRAY
+//nameOfArray[position within the array] arrays always start at 0
+//accessing arrays return the value inside of that position
+
+let christian = ['Laura', 22, 'Abq', 'Mac', 2021, ['pizza', 'ice cream', 'cookies']]
+let age = christian[1]
+console.log(age)
+let innerArr = christian[5]
+console.log(innerArr[1])
