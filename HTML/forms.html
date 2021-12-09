@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Forms</title>
+</head>
+<body>
+
+    <form method="POST" action="https://request-inspector.glitch.me">
+
+        <label for="username">Username:</label>
+        <input name="username" id="username" placeholder="Enter username here.">
+        <br>
+
+        <label for="password">Password:</label>
+        <input name="password" id="password" type="password" placeholder="Enter password here.">
+        <br>
+
+        <label for="bio">Tell us a little bit about yourself.</label>
+        <br>
+        <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+        <br>
+
+        <label for="">How did you hear about us?</label>
+        <br>
+        <input type="radio" name="billboard" value="billboard">Billboard
+        <br>
+        <input type="radio" name="radioAdvertisement" value="radioAdvertisement">Radio Advertisement
+        <br>
+        <input type="radio" name="internetAdvertisement" value="internetAdvertisement">Internet Advertisement
+        <br>
+        <input type="radio" name="other" value="other">Other
+        <br>
+
+        <label for="browser">What browser you do you use?</label>
+        <select name="browser" id="browser">
+            <option value="chrome">Google Chrome</option>
+            <option value="safari">Safari</option>
+            <option value="firefox">Firefox</option>
+            <option value="Edge">Edge</option>
+        </select>
+        <br>
+
+        <input type="submit" name="submit" id="submit">
+
+    </form>
+
+</body>
+</html>
