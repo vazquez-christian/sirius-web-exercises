@@ -51,12 +51,11 @@ fieldset {
 
 .btn-block {
     width: 100%;
-    margin: 0 auto;
     /* This element should use 100% of the width */
 }
 
 .btn {
-    padding: 4px;
+    padding: 8px;
     /* There must be a separation of 8px between the text and the border of this element */
     color: white;
     font-weight: bold;
@@ -68,14 +67,15 @@ fieldset {
 
 .form-control {
     /* There must be 4px on top of the text and below the text of an input with this class */
-    margin-top: 4px;
-    margin-bottom: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: .5em;
+    margin-bottom: .5em;
     /* It should have a separation of .5em from elements on top of it and below it */
-    margin: calc(100% * .5em);
+    width: calc(100% - 4px);
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: 100%;
 }
 
 
