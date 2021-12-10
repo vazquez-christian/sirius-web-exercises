@@ -1,3 +1,8 @@
 .fancy-header {
-    color:purple;
+    text-align: center;
+}
+
+#two {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
