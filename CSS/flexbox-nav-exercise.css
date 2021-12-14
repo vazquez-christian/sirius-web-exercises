@@ -1,0 +1,36 @@
+nav {
+    display: flex;
+    width: 100%;
+    border: lightgrey solid 1px;
+    background-color: lightgrey;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10%;
+}
+
+a:hover {
+    color: blue;
+    text-decoration: none;
+    background-color: rgba(0, 0, 255, 0.2);
+
+}
+
+a:visited {
+    color: black;
+}
+
+.nav_section {
+    font-size: small;
+    font-family: 'Monsterrat', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
