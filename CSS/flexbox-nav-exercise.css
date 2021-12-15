@@ -1,14 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
 nav {
     display: flex;
     width: 100%;
     border: lightgrey solid 1px;
-    background-color: lightgrey;
+    background-color: gray;
 }
 
 a {
     display: inline-block;
     text-decoration: none;
-    padding: 10%;
+    margin: auto 6px;
+    padding: 6px;
 }
 
 a:hover {
@@ -26,11 +31,32 @@ a:visited {
     font-size: small;
     font-family: 'Monsterrat', sans-serif;
     font-weight: bold;
-    width: 100%;
+    width: 25%;
     display: flex;
-    margin: auto;
     align-items: center;
-    justify-content: space-around;
+}
+
+
+
+
+
+.logo {
+    font-size: 3em;
+    padding: 0 .2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+
+.socials {
+    font-size: small;
+    font-family: 'Monsterrat', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 25%;
 }
 
 
