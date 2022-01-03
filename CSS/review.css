@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    color: silver;
+    background-color: gray;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.italic {
+    font-style: italic;
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px){
+
+}
