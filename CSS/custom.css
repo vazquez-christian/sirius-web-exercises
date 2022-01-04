@@ -1,0 +1,13 @@
+.jumbotron {
+    background-image: url("../Assets/pizza.png");
+}
+
+
+
+.jumbotron> .display-4 {
+    text-align: center;
+}
+.blue {
+    color: white;
+    background-color: dodgerblue;
+}
