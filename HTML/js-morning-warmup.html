@@ -6,9 +6,17 @@
 </head>
 <body>
 <script>
-    function letterCase (string) {
+    function sumOfString (string) {
+        let split = string.split("").map(Number);
+        let sum = 0;
+        // console.log(split);
+        for (let i = 0; i < split.length; i++) {
+            sum += split[i]
+        }
+        console.log(split);
 
     }
+    sumOfString("1223849")
 </script>
 </body>
 </html>
