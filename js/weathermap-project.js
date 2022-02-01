@@ -26,7 +26,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [longitude, latitude],
-    zoom: 9
+    zoom: 10
 });
 
 const marker = new mapboxgl.Marker({
@@ -37,8 +37,14 @@ const marker = new mapboxgl.Marker({
 
 function onDragEnd() {
     const lngLat = marker.getLngLat();
-    coordinates.style.display = 'block';
-    coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
+    console.log(lngLat)
+    reverseGeocode(lngLat, mapboxKey).then(function (result) {
+        console.log(result);
+        let droppedCity = result;
+        document.getElementById("revGeo").innerHTML(droppedCity)
+    })
+    // coordinates.style.display = 'block';
+    // coordinates.innerHTML = `Longitude: ${lngLat.lng}<br />Latitude: ${lngLat.lat}`;
 }
 
 marker.on('dragend', onDragEnd);
@@ -47,23 +53,46 @@ $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
     // console.log(data);
     for (let i = 0; i < 5; i++) {
         console.log(data)
-        $("#weather").append(`<div class="col card">
-            <div class="">${data.daily[i].temp.day}° / ${data.daily[i].temp.night}</div>
-            <div class="">Description: ${data.daily[i].weather[0].description}</div>
-            <div class="">Humidity: ${data.daily[i].humidity}</div>
-            <div class="">Wind Speed: ${data.daily[i].wind_speed}</div>
-            </div>`)
+        let dailyWeather = `<div class="col card">
+            <div class="card-header">${timeConverter(data.daily[i].dt)}</div>
+            <div class="mb-3">${data.daily[i].temp.day}° / ${data.daily[i].temp.night}</div>
+            <div class="mb-3">Description: ${data.daily[i].weather[0].description}</div>
+            <div class="mb-3">Humidity: ${data.daily[i].humidity}</div>
+            <div class="mb-3">Wind Speed: ${data.daily[i].wind_speed}</div>
+            </div>`
+        $("#weather").append(dailyWeather)
     }
     // $(".container").append(`<p>${data.daily[0].temp.day}°</p>`)
+
+    $("#mapPlace").click(function () {
+        let searchedCity = $("#place").val();
+        console.log(searchedCity);
+        $("#weather").empty();
+        geocode(searchedCity, mapboxKey).then(function (result) {
+            console.log(result);
+            map.setCenter(result);
+            map.setZoom(10);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map);
+            marker.on('dragend', onDragEnd);
+            $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${result[1]}&lon=${result[0]}&exclude=minutely,hourly&appid=${weatherMapKey}&units=imperial`).done(function (data) {
+                for (let i = 0; i < 5; i++) {
+                    console.log(data);
+                    let dailyWeather = `<div class="col card">
+            <div class="card-header">${timeConverter(data.daily[i].dt)}</div>
+            <div class="mb-3">${data.daily[i].temp.day}° / ${data.daily[i].temp.night}</div>
+            <div class="mb-3">Description: ${data.daily[i].weather[0].description}</div>
+            <div class="mb-3">Humidity: ${data.daily[i].humidity}</div>
+            <div class="mb-3">Wind Speed: ${data.daily[i].wind_speed}</div>
+            </div>`
+                    $("#weather").append(dailyWeather);
+                }
+            })
+        })
+
+
+    })
 })
-
-// mapboxgl.accessToken = mapboxKey;
-// var map = new mapboxgl.Map({
-//     container: 'map',
-//     style: 'mapbox://styles/mapbox/streets-v9',
-//     zoom: 10,
-//     center: [-98.58803, 29.57544]
-// });
-
 
 

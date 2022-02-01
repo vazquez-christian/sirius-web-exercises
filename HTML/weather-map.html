@@ -9,31 +9,51 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <title>Weather Map App</title>
     <!-- Mapbox CSS -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
-    <style>#map {
-        /* the width and height may be set to any size */
-        width: 100%;
-        height: 400px;
-    }</style>
+    <link rel="stylesheet"
+          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css"
+          type="text/css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        #map {
+            /* the width and height may be set to any size */
+            width: 100%;
+            height: 300px;
+            margin-top: 10px;
+        }
+        blue {
+            background-color: dodgerblue;
+        }
+    </style>
 </head>
 <body>
-<h1>Weather App</h1>
+<nav class="navbar navbar-expand-lg bg-primary">
+    <h2 class="text-white">Weather App</h2>
+    <div class="nav-item ml-5 text-white" id="revGeo"></div>
+</nav>
 <!--<div class="container">-->
-    <div>
-        <label for="place">Place</label>
-        <input type="text" id="place">
-        <button type="submit" id="mapPlace">Find</button>
+<div class="input-group input-group-sm my-3">
+    <div class="input-group mb-3 w-50">
+        <div class="input-group-prepend">
+            <label class="" id="placeHolder">Place</label>
+        </div>
+        <input type="text" class="" id="place" aria-label="Default" aria-describedby="placeHolder">
+        <button type="submit" id="mapPlace" class="">Find</button>
     </div>
-    <div class="container">
-        <div id="weather" class="row justify-content-between"></div>
-    </div>
-    <div id="map"></div>
-    <div id="coordinates"></div>
-<!--</div>-->
+</div>
 
+<!--    <div class="container mt-3">-->
+<div id="weather" class="row"></div>
+<!--    </div>-->
+
+<div id="map"></div>
+<span id="coordinates" class="card"></span>
+
+<!--</div>-->
 
 
 <script src="../keys.js"></script>
