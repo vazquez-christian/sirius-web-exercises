@@ -61,7 +61,7 @@ $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
         let searchedCity = $("#place").val();
         console.log(searchedCity);
         $("#weather").empty();
-        marker.remove()
+        marker.remove();
         geocode(searchedCity, mapboxKey).then(function (result) {
             console.log(result);
             map.setCenter(result);
@@ -71,7 +71,6 @@ $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
             })
                 .setLngLat(result)
                 .addTo(map);
-            marker1.on('dragend', onDragEnd);
             $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${result[1]}&lon=${result[0]}&exclude=minutely,hourly&appid=${weatherMapKey}&units=imperial`).done(function (data) {
                 for (let i = 0; i < 5; i++) {
                     console.log(data);
@@ -84,6 +83,13 @@ $.get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${lon
             </div>`
                     $("#weather").append(dailyWeather);
                 }
+                const lngLat = marker1.getLngLat();
+                $("#revGeo").empty()
+                reverseGeocode(lngLat, mapboxKey).then(function (result) {
+                    console.log(result);
+                    let droppedCity = result;
+                    $("#revGeo").append(droppedCity)
+                })
             })
         })
 
