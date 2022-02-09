@@ -223,3 +223,13 @@ function thatsNotMyName(name) {
 
 console.log(myFunction("Christian", "Vazquez"))
 console.log(thatsNotMyName("Christian"))
+
+
+let numberArr = [2, 2, 1, 1, 3, 4, 6, 7, 8, 8, 4, 2, 1];
+
+console.log([...new Set(numberArr)])
+
+let countVowels = str => Array.from(str)
+    .filter(letter => 'aeiou'.includes(letter)).length;
+
+console.log(countVowels("helicopter"))
