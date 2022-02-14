@@ -232,4 +232,19 @@ console.log([...new Set(numberArr)])
 let countVowels = str => Array.from(str)
     .filter(letter => 'aeiou'.includes(letter)).length;
 
-console.log(countVowels("helicopter"))
+console.log(countVowels("helicopter"));
+
+function countLetters(sentence) {
+    const words = sentence.split('');
+    const wordCountObject = words.reduce((wordCounts, word) => {
+        if (typeof wordCounts[word] === 'undefined') {
+            wordCounts[word] = 1;
+        } else {
+            wordCounts[word] += 1;
+        }
+        return wordCounts;
+    }, {});
+    return wordCountObject;
+}
+
+console.log(countLetters("asdasdasfa"))
